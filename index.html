@@ -3,153 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lock Nodes - Premier Global Blockchain Infrastructure</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Lock Nodes - Elite Global Blockchain Infrastructure</title>
+    
+    <!-- LINK UTAMA CSS (Menggunakan Framework Tailwind Terintegrasi) -->
     <script src="https://tailwindcss.com"></script>
+    
+    <!-- KONFIGURASI PALET WARNA PRESET & TEMA HITAM PREMIUM -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        premiumGreen: {
-                            50: '#f4fbf7',
-                            100: '#e6f7ed',
-                            200: '#c2edd3',
-                            300: '#4ade80', /* Accent Neon */
-                            900: '#0b1f13'
+                        cyberBlack: {
+                            50: '#141414',   /* Warna Latar Belakang Kartu */
+                            100: '#0A0A0A',  /* Warna Dasar Hitam Pekat */
+                            200: '#1A1A1A'   /* Warna Gelap Sekunder */
+                        },
+                        cyberGreen: {
+                            400: '#00FF66',  /* Warna Hijau Neon Siber */
+                            500: '#00E65C'
                         }
                     }
                 }
             }
         }
     </script>
-    <style>
-        .neo-shadow { shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] }
-        .neo-shadow-lg { shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] }
-    </style>
 </head>
-<body class="bg-premiumGreen-50 text-black font-sans antialiased selection:bg-black selection:text-premiumGreen-300">
+<body class="bg-cyberBlack-100 text-white font-sans antialiased selection:bg-cyberGreen-400 selection:text-black">
 
-    <!-- Header / Navigation -->
-    <header class="border-b-2 border-black sticky top-0 bg-premiumGreen-50/90 backdrop-blur-md z-50">
+    <!-- BAGIAN 1: Navigasi / Header Atas -->
+    <header class="border-b border-white/10 sticky top-0 bg-cyberBlack-100/80 backdrop-blur-md z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-xl font-black tracking-tighter flex items-center gap-2">
-                <span>🔒</span> LOCK NODES
+            <a href="#" class="text-xl font-black tracking-tighter flex items-center gap-2 hover:text-cyberGreen-400 transition-colors">
+                <span class="text-cyberGreen-400">🔒</span> LOCK NODES
             </a>
             
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-wider">
-                <a href="#services" class="hover:text-premiumGreen-300 transition-colors">Services</a>
-                <a href="#ecosystem" class="hover:text-premiumGreen-300 transition-colors">Ecosystem</a>
-                <a href="#infrastructure" class="hover:text-premiumGreen-300 transition-colors">Infrastructure</a>
-                <a href="#contact" class="hover:text-premiumGreen-300 transition-colors">Contact</a>
+            <!-- Menu Navigasi Desktop -->
+            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-white/70">
+                <a href="#services" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Services</a>
+                <a href="#ecosystem" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Ecosystem</a>
+                <a href="#infrastructure" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Infrastructure</a>
+                <a href="#contact" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Contact</a>
             </nav>
             
             <div class="hidden md:block">
-                <a href="#contact" class="bg-black text-white px-5 py-2.5 text-xs font-bold uppercase tracking-widest border-2 border-black hover:bg-premiumGreen-300 hover:text-black transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none">
-                    Stake Token
+                <a href="#contact" class="bg-cyberGreen-400 text-black px-6 py-2.5 text-xs font-black uppercase tracking-widest border border-cyberGreen-400 hover:bg-transparent hover:text-cyberGreen-400 transition-all shadow-[4px_4px_0px_0px_rgba(0,255,102,0.2)] active:translate-x-1 active:translate-y-1 active:shadow-none">
+                    Stake Tokens
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden block text-black focus:outline-none" aria-label="Toggle Menu">
+            <!-- Tombol Navigasi Mobile (Tampilan HP) -->
+            <button id="menu-btn" class="md:hidden block text-white focus:outline-none" aria-label="Toggle Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
 
-        <!-- Mobile Dropdown Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-premiumGreen-50 border-t-2 border-black px-6 py-6 space-y-4">
-            <a href="#services" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-black/5">Services</a>
-            <a href="#ecosystem" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-black/5">Ecosystem</a>
-            <a href="#infrastructure" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-black/5">Infrastructure</a>
-            <a href="#contact" class="block text-sm font-bold uppercase tracking-wider py-2">Contact</a>
-            <a href="#contact" class="block bg-black text-white text-center py-3 text-xs font-bold uppercase tracking-widest border-2 border-black">
-                Stake Token
+        <!-- Menu Dropdown Mobile (Muncul saat logo hamburger di-klik pada HP) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyberBlack-100 border-t border-white/10 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#services" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Services</a>
+            <a href="#ecosystem" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Ecosystem</a>
+            <a href="#infrastructure" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Infrastructure</a>
+            <a href="#contact" class="block text-sm font-bold uppercase tracking-wider py-2 text-white/80">Contact</a>
+            <a href="#contact" class="block bg-cyberGreen-400 text-black text-center py-3 text-xs font-black uppercase tracking-widest border border-cyberGreen-400">
+                Stake Tokens
             </a>
         </div>
     </header>
 
-    <!-- Live Performance Bar -->
-    <div class="bg-black text-white border-b-2 border-black py-3 text-[10px] font-mono uppercase tracking-widest overflow-hidden">
+    <!-- BAGIAN 2: Indikator Statistik Jaringan (Live Tracker) -->
+    <div class="bg-cyberBlack-50 text-white/60 border-b border-white/10 py-3 text-[10px] font-mono uppercase tracking-widest overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between gap-4">
             <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-premiumGreen-300 animate-pulse"></span>
-                <span>Nodes Status: <span class="text-premiumGreen-300 font-bold">142 Global Active</span></span>
+                <span class="w-2 h-2 rounded-full bg-cyberGreen-400 animate-ping"></span>
+                <span>Nodes Cluster: <span class="text-cyberGreen-400 font-bold">142 Global Active</span></span>
             </div>
-            <div>Total Value Locked: <span class="text-premiumGreen-300 font-bold">$148.2M+</span></div>
-            <div>Validator Uptime: <span class="text-premiumGreen-300 font-bold">99.99%</span></div>
+            <div>Total Value Locked: <span class="text-white font-bold">$148.2M+</span></div>
+            <div>Uptime Guarantee: <span class="text-cyberGreen-400 font-bold">99.99%</span></div>
+            <div class="hidden sm:block">Network Latency: <span class="text-white font-bold">&lt; 85ms</span></div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 py-20 md:py-32 text-center md:text-left md:flex md:items-center md:justify-between gap-16">
+    <!-- BAGIAN 3: Banner Utama (Hero Section) -->
+    <section class="max-w-6xl mx-auto px-6 py-24 md:py-36 text-center md:text-left md:flex md:items-center md:justify-between gap-16">
         <div class="max-w-xl">
-            <span class="inline-block bg-premiumGreen-200 text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 border-2 border-black mb-6">
+            <span class="inline-block bg-cyberGreen-400/10 border border-cyberGreen-400/30 text-cyberGreen-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
                 Institutional Node Operator
             </span>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tighter leading-none uppercase mb-6">
-                Enterprise Node & Validator Systems.
+            <h1 class="text-4xl sm:text-6xl font-black tracking-tighter leading-none uppercase mb-6 bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+                PREMIER VALIDATOR INFRASTRUCTURE.
             </h1>
-            <p class="text-base md:text-lg text-black/70 font-medium mb-10 leading-relaxed">
-                Lock Nodes delivers world-class, autonomous validator infrastructure for Testnet and Mainnet layers. Engineered for elite execution and zero-slashing performance.
+            <p class="text-base md:text-lg text-white/70 font-medium mb-10 leading-relaxed">
+                Lock Nodes powers top-tier decentralized protocol networks. We deliver hyper-secure Testnet and Mainnet node operations customized for enterprise staking architecture.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#services" class="bg-black text-white px-8 py-4 text-xs font-bold uppercase tracking-wider border-2 border-black hover:bg-premiumGreen-300 hover:text-black transition-all text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5">
-                    Explore Infrastructure
+                <a href="#services" class="bg-cyberGreen-400 text-black px-8 py-4 text-xs font-bold uppercase tracking-wider border border-cyberGreen-400 hover:bg-transparent hover:text-cyberGreen-400 transition-all text-center shadow-[6px_6px_0px_0px_rgba(0,255,102,0.15)] active:translate-x-0.5 active:translate-y-0.5">
+                    Explore Node Services
                 </a>
-                <a href="#contact" class="bg-white text-black px-8 py-4 text-xs font-bold uppercase tracking-wider border-2 border-black hover:bg-black/5 transition-all text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                    Request Integration
+                <a href="#contact" class="bg-transparent text-white px-8 py-4 text-xs font-bold uppercase tracking-wider border border-white/20 hover:border-cyberGreen-400 hover:text-cyberGreen-400 transition-all text-center">
+                    Request Consultation
                 </a>
             </div>
         </div>
         
-        <!-- Premium Graphic Element -->
-        <div class="hidden md:flex w-96 h-96 bg-premiumGreen-200 border-2 border-black items-center justify-center shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+        <!-- Grafik Visual Siber Premium -->
+        <div class="hidden md:flex w-96 h-96 bg-cyberBlack-50 border border-white/10 items-center justify-center shadow-[12px_12px_0px_0px_rgba(20,20,20,1)] relative overflow-hidden group">
+            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <div class="absolute -inset-px border border-cyberGreen-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="text-center z-10">
-                <div class="text-7xl mb-4 animate-bounce">⚡</div>
-                <div class="font-mono text-xs font-bold bg-black text-white px-3 py-1 border border-black uppercase tracking-wider">Net_Secure_Root</div>
+                <div class="text-7xl mb-4 text-cyberGreen-400 drop-shadow-[0_0_15px_rgba(0,255,102,0.3)] animate-pulse">⚡</div>
+                <div class="font-mono text-[10px] font-bold bg-cyberBlack-100 text-white/40 px-3 py-1 border border-white/10 uppercase tracking-widest">CLUSTER_SYS_ACTIVE</div>
             </div>
         </div>
     </section>
 
-    <!-- Services / Capability Cards -->
-    <section id="services" class="bg-premiumGreen-100 py-24 border-t-2 border-b-2 border-black">
+    <!-- BAGIAN 4: Layanan Profesional (Services Section) -->
+    <section id="services" class="bg-cyberBlack-50/50 py-28 border-t border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-20">
+            <div class="text-center max-w-2xl mx-auto mb-24">
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Core Operational Services</h2>
-                <p class="text-black/60 font-medium text-sm">Professional security architecture handling blockchain data validation layers on a global scale.</p>
+                <p class="text-white/50 font-medium text-sm">Professional security architecture handling blockchain data validation layers on a global scale.</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1 duration-200">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-3xl">⚙️</div>
-                        <span class="text-[9px] font-mono bg-black text-white font-bold px-2 py-0.5 uppercase tracking-wide">RPC / API</span>
+                <!-- Kartu Layanan 1 -->
+                <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚙️</div>
+                        <span class="text-[9px] font-mono bg-white/5 text-white/60 font-bold px-2.5 py-1 border border-white/10 uppercase tracking-wider">RPC / API</span>
                     </div>
-                    <h3 class="text-lg font-bold uppercase mb-2">Node Operations</h3>
-                    <p class="text-black/60 text-xs leading-relaxed font-medium">
+                    <h3 class="text-lg font-bold uppercase mb-3 text-white group-hover:text-cyberGreen-400 transition-colors">Node Operations</h3>
+                    <p class="text-white/60 text-xs leading-relaxed font-medium">
                         Highly available RPC endpoints, dedicated full nodes, and snapshot delivery networks for automated cluster alignments.
                     </p>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-8 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1 duration-200">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-3xl">🧪</div>
-                        <span class="text-[9px] font-mono bg-black text-white font-bold px-2 py-0.5 uppercase tracking-wide">Pre-Launch</span>
-                    </div>
-                    <h3 class="text-lg font-bold uppercase mb-2">Testnet Validation</h3>
-                    <p class="text-black/60 text-xs leading-relaxed font-medium">
-                        Rigorous staging control, genesis deployment tracking, and structural network drill participations prior to release.
-                    </p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-8 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-transform hover:-translate-y-1 duration-200">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-3xl">💎</div>
-                        <span class="text-[9px] font-mono bg-premiumGreen-300 text-black font-bold px-2 py-0.5 uppercase tracking-wide">Live</span>
-                    </div>
-                    <h3 class="text-lg font-bold uppercase mb-2">Mainnet Consensus</h3>
+                <!-- Kartu Layanan 2 -->
+                <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
