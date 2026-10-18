@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lock Nodes - Professional Node & Validator Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brandGreen-100 text-black font-sans antialiased selection:bg-black selection:text-brandGreen-100">
+
+    <!-- Header / Navigation -->
+    <header class="border-b border-black/10 sticky top-0 bg-brandGreen-100/80 backdrop-blur-md z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span>🔒</span> Lock Nodes
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#services" class="hover:underline underline-offset-4 decoration-2 transition-all">Services</a>
+                <a href="#features" class="hover:underline underline-offset-4 decoration-2 transition-all">Features</a>
+                <a href="#contact" class="hover:underline underline-offset-4 decoration-2 transition-all">Contact Us</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-black text-brandGreen-100 px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-black/80 transform hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-sm">
+                    Join Node
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden block text-black focus:outline-none p-1" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandGreen-100 border-b border-black/10 px-6 py-4 space-y-4 shadow-inner">
+            <a href="#services" class="block font-medium py-2 border-b border-black/5">Services</a>
+            <a href="#features" class="block font-medium py-2 border-b border-black/5">Features</a>
+            <a href="#contact" class="block font-medium py-2">Contact Us</a>
+            <a href="#contact" class="block bg-black text-brandGreen-100 text-center py-3 font-semibold rounded-xl hover:bg-black/80 transition-colors">
+                Join Node
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-center md:text-left md:flex md:items-center md:justify-between gap-12">
+        <div class="max-w-2xl">
+            <span class="inline-block bg-black/5 border border-black/10 text-xs font-semibold px-3 py-1 rounded-full mb-6">
+                Professional Blockchain Infrastructure
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+                Run Nodes & Validators Securely Without Gaps.
+            </h1>
+            <p class="text-lg md:text-xl text-black/70 mb-8 leading-relaxed max-w-xl mx-auto md:mx-0">
+                Lock Nodes provides enterprise-grade Testnet and Mainnet validator services with maximum uptime guarantees, tight security, and professional management.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#services" class="bg-black text-brandGreen-100 px-6 py-3.5 font-semibold rounded-xl hover:bg-black/80 transform hover:-translate-y-0.5 active:translate-y-0 transition-all text-center shadow-md">
+                    View Our Nodes
+                </a>
+                <a href="#contact" class="border border-black text-black px-6 py-3.5 font-semibold rounded-xl hover:bg-black/5 transform hover:-translate-y-0.5 active:translate-y-0 transition-all text-center">
+                    Infrastructure Consulting
+                </a>
+            </div>
+        </div>
+        <div class="hidden md:flex w-80 h-80 bg-brandGreen-300 rounded-3xl border-2 border-black items-center justify-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
+            <span class="text-6xl animate-bounce">⚡</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-brandGreen-200/50 py-20 border-t border-b border-black/10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight mb-4">Node Management Services</h2>
+                <p class="text-black/70">We ensure your network participation runs smoothly at every stage of the blockchain lifecycle.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brandGreen-50 p-8 rounded-2xl border border-black/10 hover:border-black transform hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div class="text-3xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-2">Node Operation</h3>
+                    <p class="text-black/70 text-sm leading-relaxed">
+                        Reliable provisioning and maintenance of RPC nodes, full nodes, and archive nodes for various L1 and L2 ecosystems.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-brandGreen-50 p-8 rounded-2xl border border-black/10 hover:border-black transform hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div class="text-3xl mb-4">🧪</div>
+                    <h3 class="text-xl font-bold mb-2">Testnet Validator</h3>
+                    <p class="text-black/70 text-sm leading-relaxed">
+                        Actively participating in early testnet phases, supporting network stability, and ensuring readiness prior to public releases.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-brandGreen-50 p-8 rounded-2xl border border-black/10 hover:border-black transform hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div class="text-3xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold mb-2">Mainnet Validator</h3>
+                    <p class="text-black/70 text-sm leading-relaxed">
+                        High-tier staking and validator services on main networks with robust architectures to minimize slashing risks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Features -->
+    <section id="features" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Why Choose Lock Nodes?</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="font-bold text-xl text-black/40">01/</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">99.9% Uptime Guarantee</h4>
+                            <p class="text-black/70 text-sm">Backed by high-specification VPS/Dedicated servers across global data centers.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="font-bold text-xl text-black/40">02/</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">24/7 Active Monitoring</h4>
+                            <p class="text-black/70 text-sm">Instant automated alerting systems to detect performance anomalies before issues arise.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="font-bold text-xl text-black/40">03/</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Multi-layered Security</h4>
+                            <p class="text-black/70 text-sm">DDoS protection, secure private key management, and strict firewall configurations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-black text-brandGreen-100 p-8 rounded-3xl shadow-xl transform hover:scale-[1.01] transition-transform duration-300">
+                <h3 class="text-2xl font-bold mb-4">Infrastructure Readiness</h3>
+                <p class="text-brandGreen-100/70 text-sm mb-6">We design flexible server architectures to keep pace with evolving blockchain hardware specifications.</p>
+                <div class="space-y-3 font-mono text-xs border-t border-brandGreen-100/20 pt-4">
