@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lock Nodes - Elite Global Blockchain Infrastructure</title>
-    
-    <!-- LINK UTAMA CSS (Menggunakan Framework Tailwind Terintegrasi) -->
+    <title>Lock Nodes - Elite Global Blockchain Infrastructure & Validator Services</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
-    
-    <!-- KONFIGURASI PALET WARNA PRESET & TEMA HITAM PREMIUM -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         cyberBlack: {
-                            50: '#141414',   /* Warna Latar Belakang Kartu */
-                            100: '#0A0A0A',  /* Warna Dasar Hitam Pekat */
-                            200: '#1A1A1A'   /* Warna Gelap Sekunder */
+                            50: '#141414',   /* Card Background */
+                            100: '#0A0A0A',  /* Main Deep Black */
+                            200: '#1A1A1A'   /* Secondary Dark */
                         },
                         cyberGreen: {
-                            400: '#00FF66',  /* Warna Hijau Neon Siber */
+                            400: '#00FF66',  /* Electric Neon Green Accent */
                             500: '#00E65C'
                         }
                     }
@@ -31,14 +28,14 @@
 </head>
 <body class="bg-cyberBlack-100 text-white font-sans antialiased selection:bg-cyberGreen-400 selection:text-black">
 
-    <!-- BAGIAN 1: Navigasi / Header Atas -->
+    <!-- Header / Navigation -->
     <header class="border-b border-white/10 sticky top-0 bg-cyberBlack-100/80 backdrop-blur-md z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="#" class="text-xl font-black tracking-tighter flex items-center gap-2 hover:text-cyberGreen-400 transition-colors">
                 <span class="text-cyberGreen-400">🔒</span> LOCK NODES
             </a>
             
-            <!-- Menu Navigasi Desktop -->
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-white/70">
                 <a href="#services" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Services</a>
                 <a href="#ecosystem" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Ecosystem</a>
@@ -52,7 +49,7 @@
                 </a>
             </div>
 
-            <!-- Tombol Navigasi Mobile (Tampilan HP) -->
+            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden block text-white focus:outline-none" aria-label="Toggle Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -60,7 +57,7 @@
             </button>
         </div>
 
-        <!-- Menu Dropdown Mobile (Muncul saat logo hamburger di-klik pada HP) -->
+        <!-- Mobile Dropdown Nav -->
         <div id="mobile-menu" class="hidden md:hidden bg-cyberBlack-100 border-t border-white/10 px-6 py-6 space-y-4 shadow-xl">
             <a href="#services" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Services</a>
             <a href="#ecosystem" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Ecosystem</a>
@@ -72,7 +69,7 @@
         </div>
     </header>
 
-    <!-- BAGIAN 2: Indikator Statistik Jaringan (Live Tracker) -->
+    <!-- Live Global Metrics Ticker -->
     <div class="bg-cyberBlack-50 text-white/60 border-b border-white/10 py-3 text-[10px] font-mono uppercase tracking-widest overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between gap-4">
             <div class="flex items-center gap-2">
@@ -85,11 +82,11 @@
         </div>
     </div>
 
-    <!-- BAGIAN 3: Banner Utama (Hero Section) -->
+    <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-6 py-24 md:py-36 text-center md:text-left md:flex md:items-center md:justify-between gap-16">
         <div class="max-w-xl">
             <span class="inline-block bg-cyberGreen-400/10 border border-cyberGreen-400/30 text-cyberGreen-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-                Institutional Node Operator
+                Enterprise Node Operator
             </span>
             <h1 class="text-4xl sm:text-6xl font-black tracking-tighter leading-none uppercase mb-6 bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 PREMIER VALIDATOR INFRASTRUCTURE.
@@ -107,7 +104,7 @@
             </div>
         </div>
         
-        <!-- Grafik Visual Siber Premium -->
+        <!-- Premium Visual Terminal Graphic -->
         <div class="hidden md:flex w-96 h-96 bg-cyberBlack-50 border border-white/10 items-center justify-center shadow-[12px_12px_0px_0px_rgba(20,20,20,1)] relative overflow-hidden group">
             <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             <div class="absolute -inset-px border border-cyberGreen-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -118,7 +115,7 @@
         </div>
     </section>
 
-    <!-- BAGIAN 4: Layanan Profesional (Services Section) -->
+    <!-- Services Section -->
     <section id="services" class="bg-cyberBlack-50/50 py-28 border-t border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-24">
@@ -127,7 +124,7 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Kartu Layanan 1 -->
+                <!-- Card 1 -->
                 <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
                     <div class="flex justify-between items-start mb-8">
                         <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚙️</div>
@@ -138,5 +135,7 @@
                         Highly available RPC endpoints, dedicated full nodes, and snapshot delivery networks for automated cluster alignments.
                     </p>
                 </div>
-                <!-- Kartu Layanan 2 -->
+                <!-- Card 2 -->
                 <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🧪</div>
