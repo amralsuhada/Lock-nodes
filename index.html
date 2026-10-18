@@ -1,141 +1,357 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lock Nodes - Elite Global Blockchain Infrastructure & Validator Services</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cyberBlack: {
-                            50: '#141414',   /* Card Background */
-                            100: '#0A0A0A',  /* Main Deep Black */
-                            200: '#1A1A1A'   /* Secondary Dark */
-                        },
-                        cyberGreen: {
-                            400: '#00FF66',  /* Electric Neon Green Accent */
-                            500: '#00E65C'
-                        }
-                    }
-                }
-            }
+    <title>Lock Nodes | Professional Node & Validator Infrastructure</title>
+    <style>
+        /* Base Reset & Core Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-    </script>
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Utility Components */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .status-dot.testnet {
+            background-color: #3b82f6;
+            box-shadow: 0 0 8px #3b82f6;
+        }
+
+        .status-badge.testnet {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Header / Navigation */
+        header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 25, 0.8);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #00f2fe;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Metrics / Features */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .metric-card {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .metric-card p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Nodes Section */
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .node-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .node-card {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .node-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .node-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .blockchain-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .blockchain-icon {
+            width: 40px;
+            height: 40px;
+            background: #1f2937;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00f2fe;
+        }
+
+        .blockchain-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .node-details {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .detail-row .label {
+            color: #6b7280;
+        }
+
+        .detail-row .value {
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #1f2937;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #2d3748;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0072ff 0%, #00f2fe 100%);
+            color: #0b0f19;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 0;
+            text-align: center;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
-<body class="bg-cyberBlack-100 text-white font-sans antialiased selection:bg-cyberGreen-400 selection:text-black">
+<body>
 
-    <!-- Header / Navigation -->
-    <header class="border-b border-white/10 sticky top-0 bg-cyberBlack-100/80 backdrop-blur-md z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <a href="#" class="text-xl font-black tracking-tighter flex items-center gap-2 hover:text-cyberGreen-400 transition-colors">
-                <span class="text-cyberGreen-400">🔒</span> LOCK NODES
-            </a>
-            
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-white/70">
-                <a href="#services" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Services</a>
-                <a href="#ecosystem" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Ecosystem</a>
-                <a href="#infrastructure" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Infrastructure</a>
-                <a href="#contact" class="hover:text-cyberGreen-400 hover:underline underline-offset-4 transition-all">Contact</a>
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">Lock<span>Nodes</span></div>
+            <nav>
+                <a href="#" class="active">Infrastructure</a>
+                <a href="#">Mainnet</a>
+                <a href="#">Testnet</a>
+                <a href="#">About Us</a>
             </nav>
-            
-            <div class="hidden md:block">
-                <a href="#contact" class="bg-cyberGreen-400 text-black px-6 py-2.5 text-xs font-black uppercase tracking-widest border border-cyberGreen-400 hover:bg-transparent hover:text-cyberGreen-400 transition-all shadow-[4px_4px_0px_0px_rgba(0,255,102,0.2)] active:translate-x-1 active:translate-y-1 active:shadow-none">
-                    Stake Tokens
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden block text-white focus:outline-none" aria-label="Toggle Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Dropdown Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cyberBlack-100 border-t border-white/10 px-6 py-6 space-y-4 shadow-xl">
-            <a href="#services" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Services</a>
-            <a href="#ecosystem" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Ecosystem</a>
-            <a href="#infrastructure" class="block text-sm font-bold uppercase tracking-wider py-2 border-b border-white/5 text-white/80">Infrastructure</a>
-            <a href="#contact" class="block text-sm font-bold uppercase tracking-wider py-2 text-white/80">Contact</a>
-            <a href="#contact" class="block bg-cyberGreen-400 text-black text-center py-3 text-xs font-black uppercase tracking-widest border border-cyberGreen-400">
-                Stake Tokens
-            </a>
         </div>
     </header>
 
-    <!-- Live Global Metrics Ticker -->
-    <div class="bg-cyberBlack-50 text-white/60 border-b border-white/10 py-3 text-[10px] font-mono uppercase tracking-widest overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between gap-4">
-            <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-cyberGreen-400 animate-ping"></span>
-                <span>Nodes Cluster: <span class="text-cyberGreen-400 font-bold">142 Global Active</span></span>
-            </div>
-            <div>Total Value Locked: <span class="text-white font-bold">$148.2M+</span></div>
-            <div>Uptime Guarantee: <span class="text-cyberGreen-400 font-bold">99.99%</span></div>
-            <div class="hidden sm:block">Network Latency: <span class="text-white font-bold">&lt; 85ms</span></div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-6 py-24 md:py-36 text-center md:text-left md:flex md:items-center md:justify-between gap-16">
-        <div class="max-w-xl">
-            <span class="inline-block bg-cyberGreen-400/10 border border-cyberGreen-400/30 text-cyberGreen-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 mb-6">
-                Enterprise Node Operator
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-black tracking-tighter leading-none uppercase mb-6 bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                PREMIER VALIDATOR INFRASTRUCTURE.
-            </h1>
-            <p class="text-base md:text-lg text-white/70 font-medium mb-10 leading-relaxed">
-                Lock Nodes powers top-tier decentralized protocol networks. We deliver hyper-secure Testnet and Mainnet node operations customized for enterprise staking architecture.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="#services" class="bg-cyberGreen-400 text-black px-8 py-4 text-xs font-bold uppercase tracking-wider border border-cyberGreen-400 hover:bg-transparent hover:text-cyberGreen-400 transition-all text-center shadow-[6px_6px_0px_0px_rgba(0,255,102,0.15)] active:translate-x-0.5 active:translate-y-0.5">
-                    Explore Node Services
-                </a>
-                <a href="#contact" class="bg-transparent text-white px-8 py-4 text-xs font-bold uppercase tracking-wider border border-white/20 hover:border-cyberGreen-400 hover:text-cyberGreen-400 transition-all text-center">
-                    Request Consultation
-                </a>
-            </div>
-        </div>
+    <!-- Main Content -->
+    <main class="container">
         
-        <!-- Premium Visual Terminal Graphic -->
-        <div class="hidden md:flex w-96 h-96 bg-cyberBlack-50 border border-white/10 items-center justify-center shadow-[12px_12px_0px_0px_rgba(20,20,20,1)] relative overflow-hidden group">
-            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div class="absolute -inset-px border border-cyberGreen-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="text-center z-10">
-                <div class="text-7xl mb-4 text-cyberGreen-400 drop-shadow-[0_0_15px_rgba(0,255,102,0.3)] animate-pulse">⚡</div>
-                <div class="font-mono text-[10px] font-bold bg-cyberBlack-100 text-white/40 px-3 py-1 border border-white/10 uppercase tracking-widest">CLUSTER_SYS_ACTIVE</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="status-badge" style="margin-bottom: 16px;">
+                <div class="status-dot"></div> All systems operational
             </div>
-        </div>
-    </section>
+            <h1>Enterprise Grade Node Infrastructure</h1>
+            <p>Lock Nodes provides secure, reliable, and high-performance validator infrastructure for leading Mainnet and Testnet blockchain networks.</p>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-cyberBlack-50/50 py-28 border-t border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-24">
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Core Operational Services</h2>
-                <p class="text-white/50 font-medium text-sm">Professional security architecture handling blockchain data validation layers on a global scale.</p>
+        <!-- Metrics Section -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>99.99%</h3>
+                <p>Node Uptime</p>
             </div>
+            <div class="metric-card">
+                <h3>15+</h3>
+                <p>Networks Supported</p>
+            </div>
+            <div class="metric-card">
+                <h3>Enterprise</h3>
+                <p>KVM/SLA Security</p>
+            </div>
+            <div class="metric-card">
+                <h3>24/7</h3>
+                <p>Active Monitoring</p>
+            </div>
+        </section>
+
+        <!-- Mainnet Section -->
+        <h2 class="section-title">🔒 Production Mainnet</h2>
+        <section class="node-grid">
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
-                    <div class="flex justify-between items-start mb-8">
-                        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚙️</div>
-                        <span class="text-[9px] font-mono bg-white/5 text-white/60 font-bold px-2.5 py-1 border border-white/10 uppercase tracking-wider">RPC / API</span>
+            <!-- Node Card 1 (Mainnet) -->
+            <div class="node-card">
+                <div class="node-header">
+                    <div class="blockchain-info">
+                        <div class="blockchain-icon">ETH</div>
+                        <div class="blockchain-name">Ethereum</div>
                     </div>
-                    <h3 class="text-lg font-bold uppercase mb-3 text-white group-hover:text-cyberGreen-400 transition-colors">Node Operations</h3>
-                    <p class="text-white/60 text-xs leading-relaxed font-medium">
-                        Highly available RPC endpoints, dedicated full nodes, and snapshot delivery networks for automated cluster alignments.
-                    </p>
+                    <div class="status-badge">
+                        <div class="status-dot"></div> Mainnet
+                    </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-cyberBlack-50 p-8 border border-white/10 transition-all duration-300 hover:border-cyberGreen-400/50 group shadow-xl">
-                    <div class="flex justify-between items-start mb-8">
-                        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🧪</div>
+                <div class="node-details">
+                    <div class="detail-row">
+                        <span class="label">Commission Fee</span>
+                        <span class="value">5%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Current Uptime</span>
+                        <span class="value">100%</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Client Version</span>
+                        <span class="value">v2.5.1-stable</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Stake Now</a>
+            </div>
+
+            <!-- Node Card 2 (Mainnet) -->
+            <div class="node-card">
+                <div class="node-header">
+                    <div class="blockchain-info">
+                        <div class="blockchain-icon">ATOM</div>
+                        <div class="blockchain-name">Cosmos Hub</div>
+                    </div>
+                    <div class="status-badge">
